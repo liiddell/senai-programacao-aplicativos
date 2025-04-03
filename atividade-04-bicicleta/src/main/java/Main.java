@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Acessorio capacete = new Acessorio("Capacete", "BMX", "Plástico", 200.0);
-        Bicicleta bicicleta1 = new Bicicleta("Onix", "Trip", "Road", 1500.0, capacete);
+        Acessorio a1 = new Acessorio("Capacete", "BMX", "Plástico", 200.0);
+        Bicicleta bicicleta1 = new Bicicleta("Onix", "Trip", "Road", 1500.0, a1);
 
         bicicleta1.exibirDetalhes();
         System.out.println();
 
-        Acessorio farol = new Acessorio("Farol", "Caloi", "Plástico", 75.0);
-        Bicicleta bicicleta2 = new Bicicleta("Caloi", "Road", "Trip", 2500.0, farol);
+        Acessorio a2 = new Acessorio("Farol", "Caloi", "Plástico", 75.0);
+        Bicicleta bicicleta2 = new Bicicleta("Caloi", "Road", "Trip", 2500.0, a2);
 
         bicicleta2.exibirDetalhes();
         System.out.println();

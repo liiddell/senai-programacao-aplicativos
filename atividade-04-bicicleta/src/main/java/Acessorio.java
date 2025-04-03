@@ -1,8 +1,13 @@
+import java.util.ArrayList;
+
 public class Acessorio {
     private String tipo;
     private String marca;
     private String material;
     private double preco;
+
+    ArrayList<String> acessorios = new ArrayList<>();
+
 
     public Acessorio(){
     }
@@ -12,6 +17,9 @@ public class Acessorio {
         setMarca(marca);
         setMaterial(material);
         setPreco(preco);
+
+        acessorios.add("Capacete");
+        acessorios.add("Farol");
     }
 
     public String getTipo() {
