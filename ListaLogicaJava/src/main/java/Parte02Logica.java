@@ -1,6 +1,8 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
-public class ExerciciosParte02 {
+public class Parte02Logica {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -16,6 +18,12 @@ public class ExerciciosParte02 {
         // exercicio13();
         // exercicio14();
         // exercicio15();
+        // exercicio16();
+        // exercicio17();
+        // exercicio18();
+        // exercicio19();
+        // exercicio20();
+        exercicio21();
     }
 
     static void exercicio04() {
@@ -217,6 +225,77 @@ public class ExerciciosParte02 {
         double volume = comprimento * largura * altura;
 
         System.out.printf("Volume da caixa retangular: %.2f unidades cubicas", volume);
+    }
+
+    static void exercicio16(){
+        int valor;
+        System.out.println("Digite um valor: ");
+        valor = scanner.nextInt();
+
+        int quadrado = valor * valor;
+        int cubo = valor * valor * valor;
+
+        System.out.println("O valor ao quadrado é de: " +quadrado);
+        System.out.println("O valor ao cubo é de: "+cubo);
+    }
+
+    static void exercicio17(){
+        int num1, num2;
+
+        System.out.println("Digite um valor A: ");
+        num1 = scanner.nextInt();
+        System.out.println("Digite um valor B: ");
+        num2 = scanner.nextInt();
+
+        int soma = num1 + num2;
+        int quadrado = soma * soma;
+        System.out.println("O quadrado da soma dos valores lido é de: " +quadrado);
+    }
+
+    static void exercicio18(){
+        int num1, num2;
+
+        System.out.println("Digite um valor A: ");
+        num1 = scanner.nextInt();
+        System.out.println("Digite um valor B: ");
+        num2 = scanner.nextInt();
+
+        int quadradoA = num1 * num1;
+        int quadradoB = num2 * num2;
+
+        int somaQuadrado = quadradoA + quadradoB;
+
+        System.out.println("A ao quadrado: " +quadradoA);
+        System.out.println("B ao quadrado: " +quadradoB);
+        System.out.println("A soma do quadrado de cada valor lido é:  " +somaQuadrado);
+    }
+
+    static void exercicio19(){
+        int val1, val2;
+        System.out.println("Digite o primeiro valor: ");
+        val1 = scanner.nextInt();
+        System.out.println("Digite o segundo valor: ");
+        val2 = scanner.nextInt();
+
+        int media = (val1 + val2) / 2;
+
+        System.out.println("A média dos valores digitados é de: "+ media);
+    }
+
+    static void exercicio20(){
+        int numA, numB;
+
+        System.out.println("Digite o primeiro valor: ");
+        numA = scanner.nextInt();
+        System.out.println("Digite o segundo valor: ");
+        numB = scanner.nextInt();
+
+        System.out.println("Valores em ordem inversa: "+numB+ " " +numA);
+
+    }
+
+    static void exercicio21(){
+        
     }
 
 }
