@@ -1,5 +1,4 @@
 import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 public class Parte02Logica {
@@ -23,7 +22,9 @@ public class Parte02Logica {
         // exercicio18();
         // exercicio19();
         // exercicio20();
-        exercicio21();
+        // exercicio21();
+        // exercicio22();
+        // exercicio23();
     }
 
     static void exercicio04() {
@@ -295,9 +296,59 @@ public class Parte02Logica {
     }
 
     static void exercicio21(){
-        
+        double velKh;
+        System.out.println("Digite o a velocidade: ");
+        velKh = scanner.nextDouble();
+
+        double velMs = velKh / 3.6;
+
+        System.out.printf("A velocidade %.2f Km/h é de: %.2fm/s.", velKh, velMs);
     }
 
+    static void exercicio22() {
+        System.out.println("Digite o primeiro valor: ");
+        int num1 = scanner.nextInt();
+
+        System.out.println("Digite o segundo valor: ");
+        int num2 = scanner.nextInt();
+
+        int quociente = num1 / num2;
+        int mod = num1 % num2;
+
+        System.out.printf("Quociente: %d\nResto: %d\n", quociente, mod);
+    }
+
+    static void exercicio23(){
+        double salario;
+
+        System.out.println("Digite seu salário: ");
+        salario = scanner.nextDouble();
+
+        double descontoPrevidencia = salario * 0.10;
+
+        double descontoImposto = salario * 0.05;
+
+        double salarioLiquido = salario - descontoPrevidencia - descontoImposto;
+
+        System.out.printf("Seu salário final é de: R$%.2f", salarioLiquido);
+    }
+
+    static void exercicio24() {
+        int codigo;
+        System.out.println("Digite um código de 5 dígitos: ");
+        codigo = scanner.nextInt();
+
+        int A = codigo / 10000;
+        int B = (codigo / 1000) % 10;
+        int C = (codigo / 100) % 10;
+        int D = (codigo / 10) % 10;
+        int E = codigo % 10;
+
+        int S = 6*A + 5*B + 4*C + 3*D + 2*E;
+        int digitoV = S % 7;
+
+        System.out.printf("O dígito verificador do código %d é: %d\n", codigo, digitoV);
+    }
 }
 
 
