@@ -10,7 +10,7 @@ public class Jogador {
     public Jogador(String nome, Integer numCamisa) {
         setNome(nome);
         setNumCamisa(numCamisa);
-        this.situacaoEscalacao = null;
+        this.situacaoEscalacao = null; // Situação da escalação começa nula (não escalado ainda)
     }
 
     public String getNome() {
@@ -40,6 +40,6 @@ public class Jogador {
     @Override
     public String toString() {
         return
-                "Nome jogador: " + this.nome+ "\nCamisa: " + this.numCamisa + "\nSituação: " + this.situacaoEscalacao;
+                "Nome jogador: " + this.nome+ "\nCamisa: " + this.numCamisa + "\nSituação: " + this.situacaoEscalacao +"\n";
     }
 }

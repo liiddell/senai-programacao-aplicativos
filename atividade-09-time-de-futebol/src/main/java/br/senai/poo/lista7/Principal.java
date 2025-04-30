@@ -1,30 +1,35 @@
 package br.senai.poo.lista7;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Principal {
     public static void main(String[] args) {
 
         Time bahia = new Time("Bahia", "Hugostoso");
 
-        bahia.contratarJogador("Everton", 1);
-        bahia.contratarJogador("Jorge", 2);
-        bahia.contratarJogador("Joao", 3);
-        bahia.contratarJogador("Matheus", 4);
-        bahia.contratarJogador("Miqueias", 5);
-        bahia.contratarJogador("Jose", 6);
-        bahia.obterEscalacao();
+        String[] nomes = {"Everton", "Jorge", "Joao", "Matheus", "Miqueias"};
 
-        bahia.escalarJogador("Everton", SituacaoEscalacaoEnum.RESERVA);
-        bahia.escalarJogador("Jorge", SituacaoEscalacaoEnum.RESERVA);
+        Integer numeroCamisa= 1;
+        for (String nome: nomes){
+            bahia.contratarJogador(nome, numeroCamisa++);
+        }
+
+        bahia.escalarJogador("Everton", SituacaoEscalacaoEnum.TITULAR);
+        bahia.escalarJogador("Jorge", SituacaoEscalacaoEnum.TITULAR);
         bahia.escalarJogador("Joao", SituacaoEscalacaoEnum.TITULAR);
-        bahia.escalarJogador("Matheus", SituacaoEscalacaoEnum.TITULAR);
+        bahia.escalarJogador("Matheus", SituacaoEscalacaoEnum.RESERVA);
         bahia.escalarJogador("Miqueias", SituacaoEscalacaoEnum.RESERVA);
-        bahia.escalarJogador("Jose", SituacaoEscalacaoEnum.TITULAR);
 
+        System.out.println("\n==== Primeira Escalação ====");
         bahia.obterEscalacao();
+
 
         bahia.removerJogadorEscalacao("Joao");
-        bahia.removerJogadorEscalacao("Jose");
-        bahia.removerJogadorEscalacao("Robertinho");
+        bahia.removerJogadorEscalacao("Matheus");
+
+        System.out.println("==== Escalação final ====");
         bahia.obterEscalacao();
     }
 }
