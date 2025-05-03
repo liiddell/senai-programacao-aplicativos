@@ -1,33 +1,11 @@
-import org.w3c.dom.ls.LSOutput;
+package parte_02_logica;
+
 import java.util.Scanner;
 
 public class Parte02Logica {
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        // exercicio04();
-        // exercicio05();
-        // exercicio06();
-        // exercicio07();
-        // exercicio08();
-        // exercicio09();
-        // exercicio10();
-        // exercicio11();
-        // exercicio12();
-        // exercicio13();
-        // exercicio14();
-        // exercicio15();
-        // exercicio16();
-        // exercicio17();
-        // exercicio18();
-        // exercicio19();
-        // exercicio20();
-        // exercicio21();
-        // exercicio22();
-        // exercicio23();
-    }
-
-    static void exercicio04() {
+    public static void calcularAreaCirculo() {
         int raio;
         double area;
         double pi = 3.14159;
@@ -40,7 +18,7 @@ public class Parte02Logica {
         System.out.println("O valor da área é de: " + area + " metros");
     }
 
-    static void exercicio05() {
+    public static void calcularAreaTriangulo() {
         double area, base, altura;
 
         System.out.println("Digite a base da triangulo: ");
@@ -54,7 +32,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio06() {
+    public static void exibirNomeCompleto() {
         String nome, sobrenome;
 
         System.out.println("Digite seu nome: ");
@@ -65,7 +43,7 @@ public class Parte02Logica {
         System.out.println("Nome completo: " + nome + " " + sobrenome);
     }
 
-    static void exercicio07() {
+    public static void somarDoisNumeros() {
         int num1, num2, soma;
 
         System.out.println("Digite o primeiro número: ");
@@ -78,7 +56,7 @@ public class Parte02Logica {
         System.out.println("A soma do número " + num1 + " e número " + num2 + " é de: " + soma);
     }
 
-    static void exercicio08(){
+    public static void calcularSalarioLiquido (){
         int ht;
         double vh;
         double pd;
@@ -105,7 +83,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio09(){
+    public static void converterCelsiusParaFahrenheit (){
         int celsius;
 
         System.out.println("=====Conversor de Temperatura=====");
@@ -118,7 +96,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio10(){
+    public static void converterFahrenheitParaCelsius (){
         int fahrenheit;
 
         System.out.println("=====Conversor de Temperatura=====");
@@ -130,7 +108,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio11(){
+    public static void calcularVolumeLata (){
         double raio;
         double altura;
         double pi = 3.14159;
@@ -147,7 +125,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio12(){
+    public static void calcularConsumoCombustivel (){
 
         double tempoGasto, velocidade;
 
@@ -166,7 +144,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio13(){
+    public static void trocarValores(){
         int a,b, temp;
 
         System.out.println("Digite valor A: ");
@@ -183,7 +161,7 @@ public class Parte02Logica {
         System.out.println("B: " +b);
     }
 
-    static void exercicio14() {
+    public static void calcularSomasEProdutos () {
         int a, b, c, d;
 
         System.out.println("====Propriedade distributiva====");
@@ -212,7 +190,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio15(){
+    public static void calcularVolumeCaixa (){
         double comprimento, largura, altura;
 
         System.out.println("====Volume de uma caixa retangular====");
@@ -228,7 +206,7 @@ public class Parte02Logica {
         System.out.printf("Volume da caixa retangular: %.2f unidades cubicas", volume);
     }
 
-    static void exercicio16(){
+    public static void calcularQuadradoECubo(){
         int valor;
         System.out.println("Digite um valor: ");
         valor = scanner.nextInt();
@@ -240,7 +218,7 @@ public class Parte02Logica {
         System.out.println("O valor ao cubo é de: "+cubo);
     }
 
-    static void exercicio17(){
+    public static void calcularQuadradoDaSoma(){
         int num1, num2;
 
         System.out.println("Digite um valor A: ");
@@ -253,7 +231,7 @@ public class Parte02Logica {
         System.out.println("O quadrado da soma dos valores lido é de: " +quadrado);
     }
 
-    static void exercicio18(){
+    public static void somarQuadrados(){
         int num1, num2;
 
         System.out.println("Digite um valor A: ");
@@ -271,7 +249,7 @@ public class Parte02Logica {
         System.out.println("A soma do quadrado de cada valor lido é:  " +somaQuadrado);
     }
 
-    static void exercicio19(){
+    public static void calcularMedia(){
         int val1, val2;
         System.out.println("Digite o primeiro valor: ");
         val1 = scanner.nextInt();
@@ -283,7 +261,7 @@ public class Parte02Logica {
         System.out.println("A média dos valores digitados é de: "+ media);
     }
 
-    static void exercicio20(){
+    public static void inverterValores(){
         int numA, numB;
 
         System.out.println("Digite o primeiro valor: ");
@@ -295,7 +273,7 @@ public class Parte02Logica {
 
     }
 
-    static void exercicio21(){
+    public static void converterKmHParaMS(){
         double velKh;
         System.out.println("Digite o a velocidade: ");
         velKh = scanner.nextDouble();
@@ -305,7 +283,7 @@ public class Parte02Logica {
         System.out.printf("A velocidade %.2f Km/h é de: %.2fm/s.", velKh, velMs);
     }
 
-    static void exercicio22() {
+    public static void calcularQuocienteEResto() {
         System.out.println("Digite o primeiro valor: ");
         int num1 = scanner.nextInt();
 
@@ -318,7 +296,7 @@ public class Parte02Logica {
         System.out.printf("Quociente: %d\nResto: %d\n", quociente, mod);
     }
 
-    static void exercicio23(){
+    public static void calcularSalarioComDescontos(){
         double salario;
 
         System.out.println("Digite seu salário: ");
@@ -333,7 +311,7 @@ public class Parte02Logica {
         System.out.printf("Seu salário final é de: R$%.2f", salarioLiquido);
     }
 
-    static void exercicio24() {
+    public static void calcularDigitoVerificador() {
         int codigo;
         System.out.println("Digite um código de 5 dígitos: ");
         codigo = scanner.nextInt();

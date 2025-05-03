@@ -1,21 +1,14 @@
+package parte_03_if_else;
+
 import java.util.Scanner;
 
 public class Parte03IfElse {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
-        // exercicio25();
-        // exercicio26();
-        // exercicio27();
-        // exercicio28();
-        // exercicio29();
-        exercicio30();
-
-
     }
 
-    static void exercicio25() {
+    public static void compararDoisNumeros() {
         int num1, num2;
 
         System.out.println("Digite o primeiro número: ");
@@ -33,7 +26,7 @@ public class Parte03IfElse {
         }
     }
 
-    static void exercicio26() {
+    public static void classificarNumeroEmFaixa() {
         int n;
         System.out.println("Digite um número: ");
         n = scanner.nextInt();
@@ -47,7 +40,7 @@ public class Parte03IfElse {
         }
     }
 
-    static void exercicio27() {
+    public static void calcularMediaComPesos() {
         double nota1, nota2, nota3;
 
         System.out.println("Digite a primeira nota: ");
@@ -72,7 +65,7 @@ public class Parte03IfElse {
         }
     }
 
-    static void exercicio28() {
+    public static void ordenarTresNumerosCrescente() {
         int a, b, c;
 
         System.out.println("Digite um número: ");
@@ -105,7 +98,7 @@ public class Parte03IfElse {
 
     }
 
-    static void exercicio29() {
+    public static void avaliarAprovacaoCandidato() {
 
         String nome;
         double notaPt, notaMat, notaConG;
@@ -129,7 +122,7 @@ public class Parte03IfElse {
         }
     }
 
-    static void exercicio30() {
+    public static void calcularComissaoVendedores() {
         String nome;
         double valor, comissao, totalVendas = 0;
 
@@ -143,8 +136,7 @@ public class Parte03IfElse {
 
             if (valor > 50000.0) {
                 comissao = valor * 0.12;
-            }
-            else if (valor >= 30000.0 && valor <= 50000.0) {
+            } else if (valor >= 30000.0 && valor <= 50000.0) {
                 comissao = valor * 0.095;
             } else {
                 comissao = valor * 0.07;
@@ -159,6 +151,111 @@ public class Parte03IfElse {
 
         System.out.printf("Total de vendas da empresa: R$ %.2f\n", totalVendas);
 
+    }
+
+    public static void compararSoma() {
+        int a, b, c;
+
+        System.out.println("Digite o número A: ");
+        a = scanner.nextInt();
+
+        System.out.println("Digite o número B: ");
+        b = scanner.nextInt();
+
+        System.out.println("Digite o número C: ");
+        c = scanner.nextInt();
+
+        int soma = a + b;
+
+        if (soma > c) {
+            System.out.println("A soma de A + B é maior que C!");
+        } else if (soma < c) {
+            System.out.println("A soma de A + B é menor que C!");
+        } else {
+            System.out.println("A soma é de A + B é igual a C!");
+        }
+    }
+
+    public static void calculcarValorCompra() {
+        double valorCompra, valorPago;
+
+        System.out.println("Digite o valor da compra: ");
+        valorCompra = scanner.nextDouble();
+        System.out.println("Digite o valor pago: ");
+        valorPago = scanner.nextDouble();
+
+        if (valorPago < valorCompra) {
+            System.out.println("Valor pago insuficiente!");
+        }
+
+        double troco = valorPago - valorCompra;
+        double nota100 = 0.0;
+        double nota10 = 0.0;
+        double nota1 = 0.0;
+
+        if (troco >= 100) {
+            nota100 = troco / 100;
+            troco = troco % 100;
+        }
+        if (troco >= 10) {
+            nota10 = troco / 10;
+            troco = troco % 10;
+        }
+        if (troco >= 1) {
+            nota1 = troco;
+        }
+
+        System.out.println("Valor da compra: R$ " + valorCompra);
+        System.out.println("Valor do troco: R$ " + (valorPago - valorCompra));
+        System.out.println("Notas de R$100: R$ " + nota100);
+        System.out.println("Notas de R$10: R$ " + nota10);
+        System.out.println("Notas de R$10: R$ " + nota1);
+    }
+
+    public static void calcularCompracomDesconto(){
+        System.out.println("Digite o nome: ");
+        String nome = scanner.nextLine();
+
+        System.out.println("Quantidade parafusos: ");
+        int qtdParafusos = scanner.nextInt();
+        System.out.println("Quantidade porcas: ");
+        int qtdPorca = scanner.nextInt();
+        System.out.println("Quantidade arruelas: ");
+        int qtdArruela = scanner.nextInt();
+
+        double precoParafuro = 2.50;
+        double precoPorca = 1.00;
+        double precoArruela = 0.50;
+
+        double totalParafuso = qtdParafusos * precoParafuro;
+        double totalPorca = qtdPorca * precoPorca;
+        double totalArruela = qtdArruela * precoArruela;
+
+        double descontoParafuso = 0;
+        double descontoPorca = 0;
+        double descontoArruela = 0;
+
+        if(qtdParafusos > 0){
+            descontoParafuso = totalParafuso * 0.20;
+        }
+        if (qtdPorca > 0){
+             descontoPorca = totalPorca * 0.10;
+        }
+
+        if (qtdArruela > 0){
+             descontoArruela = totalArruela * 0.30;
+        }
+
+        double totalDesconto = descontoParafuso + descontoPorca + descontoArruela;
+        double totalCompra = (totalParafuso + totalPorca + totalArruela) - totalDesconto;
+
+        System.out.println("\n--- RESUMO DA COMPRA ---");
+        System.out.println("Cliente: " + nome);
+        System.out.println("Parafusos: " + qtdParafusos + " unidades");
+        System.out.println("Porcas: " + qtdPorca + " unidades");
+        System.out.println("Arruelas: " + qtdArruela + " unidades");
+        System.out.println("Total de desconto: R$ " + totalDesconto);
+        System.out.println("Total a pagar: R$ " + totalCompra);
     }
 }
 
