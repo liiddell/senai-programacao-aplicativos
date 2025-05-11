@@ -7,7 +7,7 @@ public class Aluno extends Pessoa{
     private String matricula;
     private TipoPlano tipoPlano;
     private static int totalAlunos = 0;
-    private List<String> aulasAgendadas;
+    private List<String> aulasAgendadas = new ArrayList<>();;
 
     public Aluno(String nome, String cpf, String dataNascimento, TipoPlano tipoPlano) {
         super(nome, cpf, dataNascimento);

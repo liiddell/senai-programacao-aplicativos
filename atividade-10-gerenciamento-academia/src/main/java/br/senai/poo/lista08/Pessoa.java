@@ -22,8 +22,8 @@ public abstract class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        if(cpf.length() > 11){
-          throw new IllegalArgumentException("Erro: CPF deve ter no máximo 11 caracteres.");
+        if(cpf.length() != 11){
+          throw new IllegalArgumentException("Erro: CPF deve ter no máximo 11 dígitos.");
         }
         this.cpf = cpf;
     }
