@@ -212,7 +212,7 @@ public class Parte03IfElse {
         System.out.println("Notas de R$10: R$ " + nota1);
     }
 
-    public static void calcularCompracomDesconto(){
+    public static void calcularCompracomDesconto() {
         System.out.println("Digite o nome: ");
         String nome = scanner.nextLine();
 
@@ -235,15 +235,15 @@ public class Parte03IfElse {
         double descontoPorca = 0;
         double descontoArruela = 0;
 
-        if(qtdParafusos > 0){
+        if (qtdParafusos > 0) {
             descontoParafuso = totalParafuso * 0.20;
         }
-        if (qtdPorca > 0){
-             descontoPorca = totalPorca * 0.10;
+        if (qtdPorca > 0) {
+            descontoPorca = totalPorca * 0.10;
         }
 
-        if (qtdArruela > 0){
-             descontoArruela = totalArruela * 0.30;
+        if (qtdArruela > 0) {
+            descontoArruela = totalArruela * 0.30;
         }
 
         double totalDesconto = descontoParafuso + descontoPorca + descontoArruela;
@@ -257,5 +257,139 @@ public class Parte03IfElse {
         System.out.println("Total de desconto: R$ " + totalDesconto);
         System.out.println("Total a pagar: R$ " + totalCompra);
     }
+
+    public static void calcularSalarioPicaPau() {
+        double salarioMinimo;
+        int qtdCarros;
+        double totalVendas;
+
+        System.out.print("Informe o valor do salário mínimo: ");
+        salarioMinimo = scanner.nextDouble();
+
+        System.out.print("Quantos carros você vendeu? ");
+        qtdCarros = scanner.nextInt();
+
+        System.out.print("Qual o valor total das vendas? ");
+        totalVendas = scanner.nextDouble();
+
+        double salarioFixo = salarioMinimo * 2;
+        double comissaoPorCarro = qtdCarros * 50.0;
+        double comissaoPorVendas = totalVendas * 0.05;
+
+        double salarioFinal = salarioFixo + comissaoPorCarro + comissaoPorVendas;
+
+        System.out.printf("Seu salário final é: R$ %.2f%n", salarioFinal);
+    }
+
+    public static void imprimirArtigos() {
+        String[] nome = new String[4];
+        double[] preco = new double[4];
+        double[] desconto = new double[4];
+        double[] precoDesconto = new double[4];
+        double totalPagar = 0.0;
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Artigo " + (i+1) + " : ");
+            System.out.println("Digite o nome do artigo: ");
+            nome[i] = scanner.nextLine();
+            System.out.println("Digite o preço do artigo: ");
+            preco[i] = scanner.nextDouble();
+            System.out.println("Percentual de desconto (%): ");
+            desconto[i] = scanner.nextDouble();
+
+            scanner.nextLine();
+
+            if (desconto[i] < 0 || desconto[i] > 100) {
+                throw new IllegalArgumentException("Desconto inválido, será considerado 0%");
+            } else {
+                System.out.println("Desconto válido.");
+            }
+
+            precoDesconto[i] = preco[i] * (1 - desconto[i] / 100);
+
+            totalPagar += precoDesconto[i];
+        }
+
+        System.out.println("=================== Compras ==================");
+        for (int i = 0; i < 4; i++){
+            System.out.println("Artigos: " +nome[i]);
+            System.out.printf("Preço original: R$ %.2f%n", preco[i]);
+            System.out.printf("Desconto: %.1f%%%n", desconto[i]);
+            System.out.printf("Preço com desconto: R$ %.2f%n", precoDesconto[i]);
+            System.out.println("-----------------------------------------------");
+        }
+
+        System.out.printf("Total compra:R$ %.2f%n", totalPagar);
+    }
+
+    public static void sorveteria(){
+        double picole_tipo1 = 0.50;
+        double picole_tipo2 = 0.60;
+        double picole_tipo3 = 0.75;
+        int qtdTipo1, qtdTipo2, qtdTipo3;
+
+        System.out.print("Quantidade vendida do picolé tipo 1: ");
+        qtdTipo1 = scanner.nextInt();
+        System.out.print("Quantidade vendida do picolé tipo 2: ");
+        qtdTipo2 = scanner.nextInt();
+        System.out.print("Quantidade vendida do picolé tipo 3: ");
+        qtdTipo3 = scanner.nextInt();
+
+        if(qtdTipo1 < 0 && qtdTipo2 < 0  && qtdTipo3 <0){
+            throw new IllegalArgumentException("Erro, valor abaixo de 0");
+        }
+
+        double totalTipo1 = qtdTipo1 * picole_tipo1;
+        double totalTipo2 = qtdTipo2 * picole_tipo2;
+        double totalTipo3 = qtdTipo3 * picole_tipo3;
+
+        double totalArrecadado = totalTipo1 + totalTipo2 + totalTipo3;
+
+        System.out.println("\nRelatório de Vendas:");
+        System.out.println("----------------------------------");
+        System.out.printf("Picolé Tipo 1: %d unidades - R$ %.2f%n", qtdTipo1, totalTipo1);
+        System.out.printf("Picolé Tipo 2: %d unidades - R$ %.2f%n", qtdTipo2, totalTipo2);
+        System.out.printf("Picolé Tipo 3: %d unidades - R$ %.2f%n", qtdTipo3, totalTipo3);
+        System.out.println("----------------------------------");
+        System.out.printf("Total Arrecadado: R$ %.2f%n", totalArrecadado);
+    }
+
+    public static void contaBancaria(){
+        System.out.println("=================== Conta Bancária ====================");
+
+        int numConta, tipoOperacao;
+        double saldo, valorOperacao;
+
+        System.out.println("Digite o número da conta: ");
+        numConta = scanner.nextInt();
+
+        System.out.println("Saldo atual: R$ ");
+        saldo = scanner.nextDouble();
+
+        System.out.println("Tipo de operação: \n1 - Depósito \n2 - Saque");
+        tipoOperacao = scanner.nextInt();
+
+        System.out.println("Valor da operação: R$");
+        valorOperacao = scanner.nextDouble();
+
+        if(tipoOperacao == 1){
+            saldo+=valorOperacao;
+        }else if(tipoOperacao == 2){
+            saldo-=valorOperacao;
+        }
+        else{
+            System.out.println("Operação invalida!");
+        }
+
+        System.out.println("====================Extrato====================");
+        System.out.println("Número da conta: " +numConta);
+        System.out.printf("Saldo atualizado: R$ %.2f%n", saldo);
+
+        if(saldo < 0){
+            System.out.println("Conta estourada!");
+        }
+
+    }
 }
+
 
