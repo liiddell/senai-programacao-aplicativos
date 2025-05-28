@@ -2,7 +2,7 @@ public class Estudante {
     private String nome;
     private int idade;
     private String matricula;
-    private static int quantidadeEstudantes;
+    private static int quantidadeEstudantes = 0;
 
     public Estudante(String nome, int idade) {
         this.nome = nome;

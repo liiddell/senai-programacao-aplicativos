@@ -390,6 +390,87 @@ public class Parte03IfElse {
         }
 
     }
+
+    public static void ordenarValores(){
+        int a,b,c,temp;
+
+        System.out.println("Digite o primeiro valor: ");
+        a = scanner.nextInt();
+
+        System.out.println("Digite o segundo valor: ");
+        b = scanner.nextInt();
+
+        System.out.println("Digite o terceiro valor: ");
+        c = scanner.nextInt();
+
+        if (a > b) {
+            temp = a;
+            a = b;
+            b = temp;
+        }
+
+        if (a > c) {
+            temp = a;
+            a = c;
+            c = temp;
+        }
+
+        if (b > c) {
+            temp = b;
+            b = c;
+            c = temp;
+        }
+
+        System.out.println("Valores em ordem crescente: " + a + ", " + b + ", " + c);
+
+    }
+
+    public static void menorValor(){
+        int a,b,c,menor;
+
+        System.out.println("Digite o primeiro valor: ");
+        a = scanner.nextInt();
+
+        System.out.println("Digite o segundo valor: ");
+        b = scanner.nextInt();
+
+        System.out.println("Digite o terceiro valor: ");
+        c = scanner.nextInt();
+
+        menor = a;
+        if (b < menor) menor = b;
+        if (c < menor) menor = c;
+
+        System.out.println("O menor número é: " + menor);
+    }
+
+    public static void tipoTriangulo(){
+        int a,b,c;
+
+        System.out.println("Digite os três comprimentos dos lados do triângulo:");
+        System.out.println("Lado A: ");
+        a = scanner.nextInt();
+
+        System.out.println("Lado B: ");
+        b = scanner.nextInt();
+
+        System.out.println("Lado C: ");
+        c = scanner.nextInt();
+
+        if (a < b + c && b < a + c && c < a + b) {
+            if (a == b && b == c) {
+                System.out.println("Triângulo equilátero (todos os lados iguais)");
+            } else if (a == b || a == c || b == c) {
+                System.out.println("Triângulo isósceles (dois lados iguais)");
+            } else {
+                System.out.println("Triângulo escaleno (todos os lados diferentes)");
+            }
+        } else {
+            System.out.println("Não forma um triângulo");
+        }
+    }
+
+    
 }
 
 
