@@ -20,6 +20,11 @@ public class CadastroEstudantesTest {
     }
 
     @Test
+    public void AdicionaEstudante() {
+        assertEquals(3, cadastro.buscarPorNome("").size());
+    }
+
+    @Test
     public void BuscarPorNome() {
         ArrayList<Estudante> resultado = cadastro.buscarPorNome("Estudante1");
 
@@ -28,7 +33,7 @@ public class CadastroEstudantesTest {
     }
 
     @Test
-    public void testListarEstudantes() {
+    public void ListarEstudantes() {
         assertEquals(3, cadastro.buscarPorNome("Estudante").size());
     }
 }
